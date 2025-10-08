@@ -1,12 +1,13 @@
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
-import { Brain, Cpu, Zap, Globe } from 'lucide-react';
+import { Brain, Code2, Database, Boxes } from 'lucide-react';
+import profileImage from '@/assets/kartikeya-photo.jpg';
 
 const skills = [
   { icon: Brain, label: 'PyTorch', color: '#EE4C2C' },
-  { icon: Cpu, label: 'TensorFlow', color: '#FF6F00' },
-  { icon: Zap, label: 'React', color: '#61DAFB' },
-  { icon: Globe, label: 'Next.js', color: '#FFFFFF' },
+  { icon: Code2, label: 'FastAPI', color: '#009688' },
+  { icon: Database, label: 'Agno', color: '#7C3AED' },
+  { icon: Boxes, label: 'Docker', color: '#2496ED' },
 ];
 
 export default function AboutSection() {
@@ -27,19 +28,38 @@ export default function AboutSection() {
             transition={{ duration: 0.8 }}
           >
             <h2 className="text-5xl font-bold mb-8 glow-text">About</h2>
+            
+            {/* Profile Image */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={isInView ? { opacity: 1, scale: 1 } : {}}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="mb-8 relative w-64 h-64 mx-auto md:mx-0"
+            >
+              <div className="absolute inset-0 bg-gradient-to-br from-primary to-secondary opacity-20 rounded-2xl blur-xl" />
+              <img
+                src={profileImage}
+                alt="Kartikeya Trivedi"
+                className="relative rounded-2xl w-full h-full object-cover border-2 border-primary/30 shadow-2xl"
+              />
+            </motion.div>
+
             <div className="space-y-6 text-lg text-muted-foreground leading-relaxed">
               <p>
-                I'm a Machine Learning Engineer specializing in{' '}
-                <span className="text-primary font-semibold">agentic systems</span> and{' '}
-                <span className="text-secondary font-semibold">real-time generative AI</span>.
+                I'm a Machine Learning Engineer and{' '}
+                <span className="text-primary font-semibold">Founder of Mindrix</span>, specializing in{' '}
+                <span className="text-secondary font-semibold">agentic AI systems</span> and{' '}
+                <span className="text-accent font-semibold">real-time generative AI</span>.
               </p>
               <p>
-                My work focuses on building intelligent systems that can reason, adapt, and create—
-                pushing the boundaries of what AI can accomplish in production environments.
+                As a <span className="text-primary font-semibold">Microsoft Learn Student Ambassador</span> at KIIT,
+                I build intelligent systems that bridge cutting-edge research with production-ready applications—from
+                AI coding assistants to video generation engines.
               </p>
               <p>
-                From neural architecture optimization to deploying scalable AI infrastructure,
-                I bridge the gap between cutting-edge research and real-world applications.
+                My work focuses on <span className="text-secondary font-semibold">FastAPI backends</span>,{' '}
+                <span className="text-accent font-semibold">agentic frameworks</span>, and deploying scalable
+                AI infrastructure that transforms how developers work.
               </p>
             </div>
           </motion.div>

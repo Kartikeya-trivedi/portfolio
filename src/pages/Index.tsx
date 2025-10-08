@@ -3,6 +3,7 @@ import NeuralBackground from '@/components/NeuralBackground';
 import Navbar from '@/components/Navbar';
 import HeroSection from '@/components/HeroSection';
 import AboutSection from '@/components/AboutSection';
+import ExperienceSection from '@/components/ExperienceSection';
 import ProjectsSection from '@/components/ProjectsSection';
 import ResearchSection from '@/components/ResearchSection';
 import MindrixSection from '@/components/MindrixSection';
@@ -28,6 +29,7 @@ const Index = () => {
         <main>
           <HeroSection />
           <AboutSection />
+          <ExperienceSection />
           <ProjectsSection />
           <ResearchSection />
           <MindrixSection />
