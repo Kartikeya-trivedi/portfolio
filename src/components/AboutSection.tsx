@@ -2,6 +2,10 @@ import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
 import { Brain, Code2, Database, Boxes } from 'lucide-react';
 import profileImage from '@/assets/kartikeya-photo.jpg';
+import pytorchLogo from '@/assets/logo/pytorch-svgrepo-com.svg';
+import fastapiLogo from '@/assets/logo/fastapi-svgrepo-com.svg';
+import agnoLogo from '@/assets/logo/agno.png';
+import dockerLogo from '@/assets/logo/docker-svgrepo-com.svg';
 
 const skills = [
   { icon: Brain, label: 'PyTorch', color: '#EE4C2C' },
@@ -100,7 +104,19 @@ export default function AboutSection() {
                   }}
                   whileHover={{ scale: 1.2, boxShadow: `0 0 30px ${skill.color}40` }}
                 >
-                  <skill.icon className="w-10 h-10" style={{ color: skill.color }} />
+                  {/* Render logo images when available */}
+                  {skill.label === 'PyTorch' && (
+                    <img src={pytorchLogo} alt="PyTorch" className="w-10 h-10 object-contain" />
+                  )}
+                  {skill.label === 'FastAPI' && (
+                    <img src={fastapiLogo} alt="FastAPI" className="w-10 h-10 object-contain" />
+                  )}
+                  {skill.label === 'Agno' && (
+                    <img src={agnoLogo} alt="Agno" className="w-10 h-10 object-contain" />
+                  )}
+                  {skill.label === 'Docker' && (
+                    <img src={dockerLogo} alt="Docker" className="w-10 h-10 object-contain" />
+                  )}
                   <div className="absolute -bottom-8 text-xs text-center w-20 text-muted-foreground group-hover:text-foreground transition-colors">
                     {skill.label}
                   </div>

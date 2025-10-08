@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { useState } from 'react';
+import ktLogo from '@/assets/kt.png';
 
 export default function Navbar() {
   const [activeSection, setActiveSection] = useState('home');
@@ -26,12 +27,14 @@ export default function Navbar() {
       className="fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-card/30 border-b border-border"
     >
       <div className="container mx-auto px-6 py-4 flex justify-between items-center">
-        <motion.div
+        <motion.button
           whileHover={{ scale: 1.05 }}
-          className="text-2xl font-bold glow-text"
+          className="w-10 h-10 rounded-full overflow-hidden flex items-center justify-center"
+          onClick={() => scrollToSection('home')}
+          aria-label="Home"
         >
-          KT
-        </motion.div>
+          <img src={ktLogo} alt="KT" className="w-full h-full object-cover" />
+        </motion.button>
 
         <div className="flex gap-8">
           {navItems.map((item) => (
