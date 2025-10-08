@@ -7,10 +7,10 @@ export default function Footer() {
   };
 
   const socials = [
-    { icon: Github, href: '#', label: 'GitHub' },
-    { icon: Linkedin, href: '#', label: 'LinkedIn' },
-    { icon: Twitter, href: '#', label: 'Twitter' },
-    { icon: Mail, href: 'mailto:kartikeya@example.com', label: 'Email' },
+    { icon: Github, href: 'https://github.com/Kartikeya-trivedi', label: 'GitHub' },
+    { icon: Linkedin, href: 'https://www.linkedin.com/in/kartikeyatrivedi/', label: 'LinkedIn' },
+    { icon: Twitter, href: 'https://x.com/KartikeyaT99662', label: 'X' },
+    { icon: Mail, href: 'mailto:kartikeyatrivedi@outlook.com', label: 'Email' },
   ];
 
   return (

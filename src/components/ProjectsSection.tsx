@@ -11,6 +11,8 @@ const projects = [
     description: 'AI-powered VS Code extension with FastAPI backend using Agno framework. Features WebSocket streaming for low-latency code suggestions, vector-based context retrieval, and incremental parsing for large codebases.',
     tags: ['FastAPI', 'Agno', 'WebSocket', 'VS Code'],
     gradient: 'from-primary to-secondary',
+    github: 'https://www.codeshift-ai.tech/',
+    demo: 'https://www.youtube.com/watch?v=gN9t-qv6wTE',
   },
   {
     id: 2,
@@ -19,6 +21,8 @@ const projects = [
     description: 'End-to-end video assembly engine that segments LLM scripts into visual scenes with Stable Diffusion. Features FFmpeg scene stitching, kokoro TTS voiceover sync, and automated YouTube-ready MP4 rendering.',
     tags: ['Stable Diffusion', 'FFmpeg', 'kokoro TTS', 'Python'],
     gradient: 'from-secondary to-accent',
+    github: 'https://github.com/MLSAKIIT/ForgeTube',
+    demo: 'https://www.youtube.com/@ForgeTubeMLSAKIIT',
   },
   {
     id: 3,
@@ -27,6 +31,28 @@ const projects = [
     description: 'Hackathon-winning AI educational content generator with FastAPI backend. Real-time lip-syncing with FFmpeg and ElevenLabs TTS for natural narration, creating dynamic videos of Peter Griffin from text input.',
     tags: ['FastAPI', 'FFmpeg', 'ElevenLabs', 'REST API'],
     gradient: 'from-accent to-primary',
+    github: 'https://github.com/MLSAKIIT/professorpeter',
+    demo: 'https://www.youtube.com/@ProfessorPeter-d4y',
+  },
+  {
+    id: 4,
+    title: 'KolamVision',
+    category: 'ML',
+    description: 'Computer vision platform for cultural pattern recognition and image analytics, leveraging convolutional models and explainable ML to detect and classify traditional kolam designs at scale.',
+    tags: ['Computer Vision', 'PyTorch', 'Explainable AI', 'Image Processing'],
+    gradient: 'from-primary to-accent',
+    github: 'https://github.com/Kartikeya-trivedi/Kolamvision',
+    demo: 'https://kolamvision.vercel.app/',
+  },
+  {
+    id: 5,
+    title: 'Pixly',
+    category: 'GenAI',
+    description: 'In-game overlay that generates contextual visual assets and stylized imagery in real-time, enabling dynamic content creation for live gameplay using optimized diffusion models and low-latency pipelines.',
+    tags: ['Game Overlay', 'Real-time', 'Diffusion', 'Low-latency'],
+    gradient: 'from-secondary to-accent',
+    github: 'https://github.com/MLSAKIIT/pixly',
+    demo: '#',
   },
 ];
 
@@ -97,18 +123,26 @@ export default function ProjectsSection() {
                       {project.category}
                     </span>
                     <div className="flex gap-2">
-                      <motion.div
+                      <motion.a
+                        href={project.github || '#'}
+                        target="_blank"
+                        rel="noopener noreferrer"
                         whileHover={{ scale: 1.1, rotate: 5 }}
                         className="w-8 h-8 rounded-full bg-muted flex items-center justify-center cursor-pointer hover:bg-primary/20 transition-colors"
+                        aria-label={`${project.title} GitHub`}
                       >
                         <Github className="w-4 h-4" />
-                      </motion.div>
-                      <motion.div
+                      </motion.a>
+                      <motion.a
+                        href={project.demo || '#'}
+                        target="_blank"
+                        rel="noopener noreferrer"
                         whileHover={{ scale: 1.1, rotate: -5 }}
                         className="w-8 h-8 rounded-full bg-muted flex items-center justify-center cursor-pointer hover:bg-primary/20 transition-colors"
+                        aria-label={`${project.title} Demo`}
                       >
                         <ExternalLink className="w-4 h-4" />
-                      </motion.div>
+                      </motion.a>
                     </div>
                   </div>
 

@@ -1,6 +1,7 @@
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
 import { Sparkles, Layers, Zap } from 'lucide-react';
+import mindrixLogo from '@/assets/mindrix.png';
 import { Card } from '@/components/ui/card';
 
 const features = [
@@ -44,17 +45,17 @@ export default function MindrixSection() {
             transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
             className="inline-block mb-8"
           >
-            <div className="w-24 h-24 rounded-full bg-gradient-to-br from-primary to-secondary neural-glow flex items-center justify-center">
-              <span className="text-4xl font-bold text-background">M</span>
+            <div className="w-28 h-28 rounded-full bg-gradient-to-br from-primary to-secondary neural-glow overflow-hidden">
+              <img src={mindrixLogo} alt="Mindrix logo" className="w-full h-full object-cover" />
             </div>
           </motion.div>
 
           <h2 className="text-6xl font-bold mb-6 glow-text">Mindrix</h2>
           <p className="text-2xl text-muted-foreground mb-4">
-            Bootstrapped SaaS Startup
+            Mindrix is a student-founded AI startup building intelligent developer tools and next-generation AI systems. Backed by a $500 Modal grant and ongoing cloud credits, we’ve built scalable infrastructure for rapid product development.
           </p>
           <p className="text-xl text-primary">
-            Building Intelligent Systems
+            Our flagship product, CodeShift, is an AI-powered coding assistant that delivers context-aware suggestions and intelligent code generation to accelerate developer productivity.
           </p>
         </motion.div>
 

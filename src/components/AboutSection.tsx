@@ -16,8 +16,8 @@ export default function AboutSection() {
 
   return (
     <section id="about" ref={ref} className="relative py-32 overflow-hidden">
-      {/* Background glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-secondary/10 rounded-full blur-3xl" />
+  {/* Background glow (increased size) */}
+  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[960px] h-[960px] bg-secondary/10 rounded-full blur-3xl" />
 
       <div className="container mx-auto px-6 relative z-10">
         <div className="grid md:grid-cols-2 gap-16 items-center">
@@ -54,14 +54,14 @@ export default function AboutSection() {
             initial={{ opacity: 0, scale: 0.8 }}
             animate={isInView ? { opacity: 1, scale: 1 } : {}}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="relative h-[500px] flex items-center justify-center"
+            className="relative h-[580px] flex items-center justify-center"
           >
             {/* Profile Image in center */}
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
               animate={isInView ? { opacity: 1, scale: 1 } : {}}
               transition={{ duration: 0.8, delay: 0.3 }}
-              className="absolute w-48 h-48 rounded-full overflow-hidden border-4 border-primary/50 shadow-2xl z-10"
+              className="absolute w-56 h-56 rounded-full overflow-hidden border-4 border-primary/50 shadow-2xl z-10"
             >
               <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-secondary/20" />
               <img
@@ -74,7 +74,7 @@ export default function AboutSection() {
             {/* Orbiting skills */}
             {skills.map((skill, index) => {
               const angle = (index / skills.length) * Math.PI * 2;
-              const radius = 150;
+              const radius = 180;
               const x = Math.cos(angle) * radius;
               const y = Math.sin(angle) * radius;
 
