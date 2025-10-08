@@ -28,21 +28,6 @@ export default function AboutSection() {
             transition={{ duration: 0.8 }}
           >
             <h2 className="text-5xl font-bold mb-8 glow-text">About</h2>
-            
-            {/* Profile Image */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={isInView ? { opacity: 1, scale: 1 } : {}}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="mb-8 relative w-64 h-64 mx-auto md:mx-0"
-            >
-              <div className="absolute inset-0 bg-gradient-to-br from-primary to-secondary opacity-20 rounded-2xl blur-xl" />
-              <img
-                src={profileImage}
-                alt="Kartikeya Trivedi"
-                className="relative rounded-2xl w-full h-full object-cover border-2 border-primary/30 shadow-2xl"
-              />
-            </motion.div>
 
             <div className="space-y-6 text-lg text-muted-foreground leading-relaxed">
               <p>
@@ -64,20 +49,26 @@ export default function AboutSection() {
             </div>
           </motion.div>
 
-          {/* Right: Skill orbit */}
+          {/* Right: Profile image with skill orbit */}
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             animate={isInView ? { opacity: 1, scale: 1 } : {}}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="relative h-[400px] flex items-center justify-center"
+            className="relative h-[500px] flex items-center justify-center"
           >
-            {/* Center core */}
+            {/* Profile Image in center */}
             <motion.div
-              animate={{ rotate: 360 }}
-              transition={{ duration: 20, repeat: Infinity, ease: 'linear' }}
-              className="absolute w-32 h-32 rounded-full bg-gradient-to-br from-primary to-secondary neural-glow flex items-center justify-center"
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={isInView ? { opacity: 1, scale: 1 } : {}}
+              transition={{ duration: 0.8, delay: 0.3 }}
+              className="absolute w-48 h-48 rounded-full overflow-hidden border-4 border-primary/50 shadow-2xl z-10"
             >
-              <Brain className="w-16 h-16 text-background" />
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-secondary/20" />
+              <img
+                src={profileImage}
+                alt="Kartikeya Trivedi"
+                className="w-full h-full object-cover"
+              />
             </motion.div>
 
             {/* Orbiting skills */}

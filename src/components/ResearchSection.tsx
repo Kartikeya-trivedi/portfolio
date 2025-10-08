@@ -118,6 +118,32 @@ export default function ResearchSection() {
               </Card>
             </motion.div>
           ))}
+
+          {/* Research Opportunities CTA */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6, delay: 0.6 }}
+            className="mt-12"
+          >
+            <Card className="relative overflow-hidden bg-gradient-to-br from-primary/10 via-secondary/10 to-accent/10 backdrop-blur border-primary/30">
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent" />
+              <div className="p-8 text-center relative z-10">
+                <h3 className="text-2xl font-bold mb-4 glow-text">
+                  Looking for Research Opportunities
+                </h3>
+                <p className="text-muted-foreground mb-6 text-lg">
+                  Actively seeking research collaborations in Machine Learning, Agentic Systems, and Generative AI
+                </p>
+                <a
+                  href="mailto:your.email@example.com"
+                  className="inline-block px-8 py-3 bg-primary text-primary-foreground rounded-full font-semibold hover:bg-primary/90 transition-all hover:scale-105 shadow-lg hover:shadow-primary/50"
+                >
+                  Get in Touch
+                </a>
+              </div>
+            </Card>
+          </motion.div>
         </div>
       </div>
     </section>
